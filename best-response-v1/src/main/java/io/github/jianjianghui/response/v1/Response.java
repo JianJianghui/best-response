@@ -1,4 +1,4 @@
-package com.github.jianjianghui.response.v1;
+package io.github.jianjianghui.response.v1;
 
 /**
  * response
