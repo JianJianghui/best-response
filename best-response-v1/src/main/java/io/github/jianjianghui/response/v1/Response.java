@@ -120,7 +120,7 @@ public class Response<T> {
     }
 
 
-    private Response(int code, String msg, T data) {
+    protected Response(int code, String msg, T data) {
         this.code = code;
         this.message = msg;
         this.data = data;
