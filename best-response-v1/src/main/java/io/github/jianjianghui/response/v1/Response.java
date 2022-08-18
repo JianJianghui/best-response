@@ -28,6 +28,16 @@ public class Response<T> {
      */
     T data;
 
+
+    public Response(int code, String msg, T data) {
+        this.code = code;
+        this.message = msg;
+        this.data = data;
+    }
+
+    public Response() {
+    }
+
     public int getCode() {
         return code;
     }
@@ -39,6 +49,7 @@ public class Response<T> {
     public T getData() {
         return data;
     }
+
 
 
     private static <T> Response<T> create(int code, String msg, T data) {
@@ -119,10 +130,4 @@ public class Response<T> {
         return Response.DEFAULT_ERROR_MESSAGE;
     }
 
-
-    protected Response(int code, String msg, T data) {
-        this.code = code;
-        this.message = msg;
-        this.data = data;
-    }
 }
