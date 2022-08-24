@@ -1,22 +1,13 @@
 package io.github.jianjianghui.response.spring;
 
+import io.github.jianjianghui.response.v1.Response;
 import org.springframework.http.*;
-import org.springframework.lang.Nullable;
 import org.springframework.util.MultiValueMap;
 
-import java.net.URI;
-import java.time.Instant;
-import java.time.ZonedDateTime;
-import java.util.Arrays;
-import java.util.LinkedHashSet;
-import java.util.Optional;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.Consumer;
-
-import static io.github.jianjianghui.response.spring.Response.*;
+import static io.github.jianjianghui.response.v1.Response.*;
 
 /**
- *
+ * Rest响应
  * @author @author <a href="https://www.github.com/jianjianghui">Jianghui Jian<a/>
  * @date 2022/8/23 - 17:05
  */

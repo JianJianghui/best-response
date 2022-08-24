@@ -1,17 +1,16 @@
 package io.github.jianjianghui.response.v1;
 
+
 /**
- * response
- *
- * @author <a href="mailto:jianjianghui@foxmail.com" >Jianghui Jian</a>
- * @date 2021/7/7 - 15:23
+ * @author <a href="https://www.github.com/jianjianghui">Jianghui Jian<a/>
+ * @date 2022/8/23 - 17:16
  */
 public class Response<T> {
-    private static int DEFAULT_SUCCESS_CODE = 0;
-    private static int DEFAULT_ERROR_CODE = -1;
+    public static int DEFAULT_SUCCESS_CODE = 200;
+    public static int DEFAULT_ERROR_CODE = 500;
 
-    private static String DEFAULT_SUCCESS_MESSAGE = "successful";
-    private static String DEFAULT_ERROR_MESSAGE = "fail";
+    public static String DEFAULT_SUCCESS_MESSAGE = "success";
+    public static String DEFAULT_ERROR_MESSAGE = "error";
 
     /**
      * DEFAULT_ERROR_CODE code
@@ -28,10 +27,9 @@ public class Response<T> {
      */
     T data;
 
-
-    public Response(int code, String msg, T data) {
+    public Response(int code, String message, T data) {
         this.code = code;
-        this.message = msg;
+        this.message = message;
         this.data = data;
     }
 
@@ -42,19 +40,30 @@ public class Response<T> {
         return code;
     }
 
+    public void setCode(int code) {
+        this.code = code;
+    }
+
     public String getMessage() {
         return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public T getData() {
         return data;
     }
 
-
+    public void setData(T data) {
+        this.data = data;
+    }
 
     private static <T> Response<T> create(int code, String msg, T data) {
         return new Response<>(code, msg, data);
     }
+
 
     public static <T> Response<T> success(String msg, T data) {
         return create(DEFAULT_SUCCESS_CODE, msg, data);
@@ -98,36 +107,20 @@ public class Response<T> {
     }
 
 
-    public static void defaultSuccessCode(int successCode) {
+
+    public static void setDefaultSuccessCode(int successCode) {
         Response.DEFAULT_SUCCESS_CODE = successCode;
     }
 
-    public static void defaultSuccessMessage(String successMessage) {
+    public static void setDefaultSuccessMessage(String successMessage) {
         Response.DEFAULT_SUCCESS_MESSAGE = successMessage;
     }
 
-    public static int defaultSuccessCode() {
-        return Response.DEFAULT_SUCCESS_CODE;
-    }
-
-    public static String defaultSuccessMessage() {
-        return Response.DEFAULT_SUCCESS_MESSAGE;
-    }
-
-    public static void defaultErrorCode(int errorCode) {
+    public static void setDefaultErrorCode(int errorCode) {
         Response.DEFAULT_ERROR_CODE = errorCode;
     }
 
-    public static void defaultErrorMessage(String errorMessage) {
+    public static void setDefaultErrorMessage(String errorMessage) {
         Response.DEFAULT_ERROR_MESSAGE = errorMessage;
     }
-
-    public static int defaultErrorCode() {
-        return Response.DEFAULT_ERROR_CODE;
-    }
-
-    public static String defaultErrorMessage() {
-        return Response.DEFAULT_ERROR_MESSAGE;
-    }
-
 }
