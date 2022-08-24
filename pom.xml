@@ -7,7 +7,7 @@
     <groupId>io.github.jianjianghui</groupId>
     <artifactId>best-response</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.2</version>
+    <version>1.2.0</version>
 
     <name>best-response</name>
     <description>best web response.</description>
@@ -39,6 +39,7 @@
 
     <modules>
         <module>best-response-v1</module>
+        <module>spring-response</module>
     </modules>
 
     <profiles>
